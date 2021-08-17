@@ -40,7 +40,7 @@ char compare_code(char* secret_code, char* user_code) {
              if (strncmp(secret_code, user_code, MM_SIZE_CODE) == 0)
             {
                 printf("It is a match\n");
-                break;
+                exit(0);
             }
             
         }
@@ -64,11 +64,13 @@ char compare_code(char* secret_code, char* user_code) {
 
         if (strlen(user_code) != MM_SIZE_CODE) { 
             printf("You need 4 digits\n"); 
-        } 
+        } else if(isalpha(*user_code)) {
+            printf("This is not a digit!\n"); 
+        }
         return 0;
 }
 
-int is_string_digit(char* user_code) {
+/*int is_string_digit(char* user_code) {
     int i = 0;
 
     while(user_code[i] != '\0') {
@@ -96,7 +98,7 @@ int is_number_len(char* user_code) {
     return 0;
     //printf("This is the test %s\n",user_code);
     
-}
+}*/
     
 
 //Show number of attempts
@@ -121,7 +123,7 @@ void play_game(struct s_option* option) {
         temp = read(STDIN_FILENO, &user_code[0], MM_SIZE_CODE + 1);
         user_code[temp - 1] = '\0';
         //Compare secret code against user code to see if they match
-        if (compare_code(option->secret_code, &user_code[0]) == true || is_number_len(&user_code[0]) == true) {
+        if (compare_code(option->secret_code, &user_code[0]) == true) {
             break;
         }
         //Current attempt counter increases by 1 with each 
