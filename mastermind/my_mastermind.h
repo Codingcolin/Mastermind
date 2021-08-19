@@ -12,7 +12,7 @@ struct s_option {
     char secret_code[MM_SIZE_CODE];
 };
 
-void generate_random_code(char *dest);
+void generate_random_code(struct s_option* option);
 void init_option(struct s_option* option);
 void parse_option(struct s_option* option, int ac, char **av);
 char compare_code(char* secret_code, char* user_code);
