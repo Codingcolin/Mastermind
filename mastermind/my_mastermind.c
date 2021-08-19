@@ -63,15 +63,7 @@ char compare_code(char* secret_code, char* user_code) {
            printf("Input too sort, need 4 digits\n");
            return 0;
     }
-  /* while(user_code != 4) {
-       if(strlen(user_code) > MM_SIZE_CODE) {
-           printf("%ld",strlen(user_code));
-           printf("This is invalid\n");
-           exit(0);
-       }
-       index++;
-       
-   }*/
+ 
 
     //Check for well placed pieces in code comparisons
     while(index < MM_SIZE_CODE) {
