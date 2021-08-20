@@ -15,12 +15,6 @@ For each guess program provides feedback in the following form:
 - Misplaced pieces: 2   // are correct but in the wrong position.
 
 
-#### Before
-```
-git clone https://github.com/kasavine/mastermind.git
-cd mastermind
-make
-```
 
 #### Run (play with default pieces)
 `./my_mastermind`

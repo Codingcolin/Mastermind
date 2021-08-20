@@ -60,7 +60,7 @@ char compare_code(char* secret_code, char* user_code) {
            return 0;
     }
     if (strlen(user_code) < MM_SIZE_CODE) {
-           printf("Input too sort, need 4 digits\n");
+           printf("Input too short, need 4 digits\n");
            return 0;
     }
  
